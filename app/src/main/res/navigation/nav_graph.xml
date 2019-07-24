@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/secondFragment">
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.suleymanovtat.navigationapplication.ui.second.SecondFragment"
+        android:label="second_fragment"
+        tools:layout="@layout/second_fragment">
+        <action
+            android:id="@+id/actionToDetailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/actionToOtherFragment"
+            app:destination="@id/otherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.suleymanovtat.navigationapplication.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
+    <fragment
+        android:id="@+id/otherFragment"
+        android:name="com.suleymanovtat.navigationapplication.OtherFragment"
+        android:label="fragment_other"
+        tools:layout="@layout/fragment_other" >
+        <argument
+            android:name="mDate"
+            app:argType="string"
+            android:defaultValue="No date" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+</navigation>
